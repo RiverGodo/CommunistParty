@@ -19,11 +19,11 @@ export default {
   },
   computed:{
     isShow(){
-      if(this.$route.name === 'login'){
-        return false;
+      if(this.$route.name === 'index'||this.$route.name === 'notice'||this.$route.name === 'myparty'){
+        return true;
       }
       else{
-        return true;
+        return false;
       }
     },
     isIndex(){
@@ -73,5 +73,8 @@ a{
   width: 0.5rem;
   height: 0.5rem;
   margin: 0.4rem auto;
+}
+.border{
+  border-bottom: 1px solid rgba(0, 0, 0, .5);
 }
 </style>

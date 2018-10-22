@@ -9,18 +9,19 @@
                 </div>
             </div> 
         </router-link>
-        <router-link  to='/newsDetails' class="tab-item" :class="{active: $route.name === 'newsDetails'}">
+        <router-link  to='/notice' class="tab-item" :class="{active: $route.name === 'notice'}">
          <div class="bottom-detil">
-            <i class="iconfont" v-if="$route.name === 'newsDetails'" ><img src="../assets/消息_red.png"></i>
+            <i class="iconfont" v-if="$route.name === 'notice'" ><img src="../assets/消息_red.png"></i>
             <i class="iconfont" v-else ><img src="../assets/消息_grey.png"></i>
             <div class="tab-title">
                 通知早知道
             </div>
          </div>
         </router-link>
-        <router-link  to='/' class="tab-item">
+        <router-link  to='/myparty' class="tab-item" :class="{active: $route.name === 'myparty'}">
          <div class="bottom-detil">
-            <i class="iconfont"><img src="../assets/党_grey.png"></i>
+            <i class="iconfont" v-if="$route.name === 'myparty'" ><img src="../assets/会员_red.png"></i>
+            <i class="iconfont" v-else ><img src="../assets/会员_grey.png"></i>
             <div class="tab-title">
                 我的党建
             </div>

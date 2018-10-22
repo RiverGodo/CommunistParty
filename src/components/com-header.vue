@@ -1,7 +1,7 @@
 <template>
     <div class="com-header" fixed>
       <mt-header  :title="title">
-          <mt-button icon="back" @click="$route.back()" slot="left">
+          <mt-button icon="back" @click="$router.back(-1)" slot="left" v-if="isShow">
 
           </mt-button>
       </mt-header>
@@ -14,6 +14,15 @@ export default {
     computed:{
         title(){
             return this.$route.meta.title
+        },
+        isShow(){
+            if(this.$route.name === 'index'||this.$route.name === 'newsDetails'||this.$route.name === 'myparty')
+            {
+            return false;
+            }
+            else{
+                return true;
+            }
         }
     }
 }

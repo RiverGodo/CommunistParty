@@ -18,7 +18,7 @@
 
         <div class="main-menu">
             <div class="row">
-                <router-link to="/" class="menu-item">
+                <router-link to="/newseye" class="menu-item">
                     <div>
                         <img src="../assets/icon_01.png">
                     </div>
@@ -44,7 +44,7 @@
                 </router-link>
             </div>
             <div class="row">
-                <router-link to="/"  class="menu-item">
+                <router-link to="/oneclick"  class="menu-item">
                     <div>
                         <img src="../assets/icon_04.png">
                     </div>
@@ -52,7 +52,7 @@
                       党建一点通
                     </div>
                 </router-link>
-                <router-link to="/"  class="menu-item">
+                <router-link to="/showidentity"  class="menu-item">
                     <div>
                         <img src="../assets/icon_06.png">
                     </div>
@@ -80,12 +80,12 @@
             </div>
             <div class="menu-right">
                 <div class="row">
-                    <router-link to="/"></router-link>
+                    <router-link to="/anytimestudy"></router-link>
                     <router-link to="/"></router-link>
                 </div>
                 <div class="row">
-                    <router-link to="/"></router-link>
-                    <router-link to="/"></router-link>
+                    <router-link to="/System"></router-link>
+                    <router-link to="/activity"></router-link>
                 </div>
             </div>
         </div>
