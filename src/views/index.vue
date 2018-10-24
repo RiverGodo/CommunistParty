@@ -2,12 +2,12 @@
 <div class="index-container">
     <div class="body-detail ">
         <div class="slider">
-            <swiper :options="swiperOption">
+            <swiper :options="swiperOption">    
                 <swiper-slide v-for="item in sliders" :key="item.id">
-                    <router-link :to="{path:'/newDetails',query:{id:item.url}}" class="slider-wrap">
+                    <router-link :to="{path:`/newsDetail/${item.url}`}" class="slider-wrap"><!-- router-link页面间传数据 -->
                         <div class="wrap">
                             <img :src= "item.imgUrl" >
-                            <div class="desc">
+                            <div class="desc3">
                                 {{item.title}}
                             </div>
                         </div>
@@ -26,7 +26,7 @@
                         信工新闻眼
                     </div>
                 </router-link>
-                <router-link to="/"  class="menu-item">
+                <router-link to="/life"  class="menu-item">
                     <div>
                         <img src="../assets/icon_03.png">
                     </div>
@@ -34,14 +34,14 @@
                         掌上组织生活
                     </div>
                 </router-link>
-                <router-link to="/"  class="menu-item">
+                <div class="menu-item" @click="handleCloud">
                     <div>
                         <img src="../assets/icon_05.png">
                     </div>
-                    <div class="menu-btn-title">
+                    <div class="menu-btn-title" >
                        党员云互动
                     </div>
-                </router-link>
+                </div>
             </div>
             <div class="row">
                 <router-link to="/oneclick"  class="menu-item">
@@ -60,7 +60,7 @@
                         党员亮身份
                     </div>
                 </router-link>
-                <router-link to="/"  class="menu-item">
+                <router-link to="/today"  class="menu-item">
                     <div>
                         <img src="../assets/icon_02.png">
                     </div>
@@ -73,7 +73,7 @@
         <!-- 菜单结束 -->
         <div class="banner">
             <img src="../assets/banner02.png" alt="">
-        </div>
+        </div>  
 
         <div class="footer-menu">
             <div class="menu-left">
@@ -81,7 +81,7 @@
             <div class="menu-right">
                 <div class="row">
                     <router-link to="/anytimestudy"></router-link>
-                    <router-link to="/"></router-link>
+                    <router-link to="/anytimephoto"></router-link>
                 </div>
                 <div class="row">
                     <router-link to="/System"></router-link>
@@ -95,7 +95,7 @@
             <div class="header-left">
                 <img src="../assets/logo.png" class="header-img">
             </div>
-            <router-link to="/login">
+            <router-link to="/login" v-if="!$store.state.userInfo">
             登录
             </router-link>
         </div>
@@ -103,9 +103,9 @@
 </template>
 
 <script>
-import axios from 'axios'
 import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import { islogin } from '@/utils/islogin'
 
 export default {
 
@@ -127,9 +127,12 @@ export default {
     },
     methods:{
         getSlider() {
-            axios.get('http://211.67.177.56:8080/hhdj/carousel/carouselList.do?type=0').then(res =>{
-                this.sliders = res.data.rows
+            this.$axios.get('carousel/carouselList.do?type=0').then(res =>{
+                this.sliders = res.rows
             })
+        },
+        handleCloud() {
+           islogin('interaction',this)
         }
     },
     created() {

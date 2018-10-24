@@ -4,8 +4,8 @@
         v-infinite-scroll="loadMore"
         infinite-scroll-disabled="isOffdown"
         infinite-scroll-distance="0">
-            <router-link to="/">
-                <mt-cell v-for="item in sliders" :key="item.id" >
+            <mt-cell v-for="item in sliders" :key="item.id" >
+                <div @click="handleNewDetail(item.newsId)">
                     <div class="detail-img">
                         <img slot="icon" :src = "item.pic" class="laba">
                     </div>
@@ -22,15 +22,14 @@
                         <img src="../assets/12-eye.png" alt="" class="eyes-icon">
                         <li class="lili">{{item.count}}</li>
                     </span>
-                </mt-cell>
-            </router-link>
+                </div>
+            </mt-cell>
             <span class="nodesc">没有数据了</span>
         </div>
     </div>
 </template>
 
 <script>
-import axios from 'axios'
 export default {
     data(){
         return{
@@ -46,15 +45,18 @@ export default {
             this.getSlider()
         },
         getSlider(){
-              axios.get(`http://211.67.177.56:8080/hhdj/news/newsList.do?page=${this.pn}&rows=10&type=${this.type}`).then(res =>{
-                this.sliders = [...this.sliders , ...res.data.rows]
+            this.$axios.get(`news/newsList.do?page=${this.pn}&rows=10&type=${this.type}`).then(res =>{
+                this.sliders = [...this.sliders , ...res.rows]
                 this.isOffdown = false
-                if(res.data.rows.length == 0){
+                if(res.rows.length == 0){
                         this.isOffdown = true
                     }
             })
         },
-        
+         handleNewDetail(id){
+            console.log(id)
+            this.$router.push(`/newsDetail/${id}`)
+        }
     },
      created() {
          switch(this.$route.name){

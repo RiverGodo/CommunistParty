@@ -1,7 +1,7 @@
 <template>
     <div class="cell">
-        <router-link to="/">
-            <mt-cell v-for="item in sliders" :key="item.id" class="notice" >
+        <mt-cell v-for="item in sliders" :key="item.id" class="notice" >
+            <div @click="handleNewDetail(item.newsId)" class="notice-middle">  
                 <div class="detail-img">
                     <img slot="icon" src="../assets/iconfont_gonggaotongzhi.png" class="laba">
                 </div>
@@ -11,14 +11,13 @@
                         {{item.currentTime}}
                     </div>
                 </div>
-            </mt-cell>
-        </router-link>
+            </div>
+        </mt-cell>
         <span class="nodesc">没有数据了</span>
     </div>
 </template>
 
 <script>
-import axios from 'axios'
 export default {
     data(){
         return{
@@ -27,9 +26,13 @@ export default {
     },
     methods:{
         getSlider(){
-              axios.get('http://211.67.177.56:8080/hhdj/news/newsList.do?page=1&rows=10&type=2').then(res =>{
-                this.sliders = res.data.rows
+              this.$axios.get('news/newsList.do?page=1&rows=10&type=2').then(res =>{
+                this.sliders = res.rows
             })
+        },
+        handleNewDetail(id){
+            console.log(id)
+            this.$router.push(`/newsDetail/${id}`)
         }
     },
      created() {

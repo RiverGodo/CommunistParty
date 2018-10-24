@@ -1,5 +1,5 @@
 
-.mint-cell-wrapper{
+.notice{
     height: 1.94rem;
     border-bottom: 1px solid rgba(0, 0, 0, .1)
 }
@@ -15,10 +15,12 @@
 }
 
 .detail-img{
-    width: 2rem;
+    width: 1rem;
     height: 1.52rem;
     position: absolute;
-    left: 0;
+    left: 0.3rem;
+    top: 0.5rem;
+
 }
 
 .laba{
@@ -26,16 +28,17 @@
     text-align: center;
     margin: 0 auto;
     justify-content: space-between;
-    padding-top: 18px;
 }
 
 .desc{
+    width: 5.08rem;
     font-size: 15px;
     color: #333;
     line-height: 22px;
     position: absolute;
-    left: 1.8rem;
-    right: 0.24rem;
+    left: 1.7rem;
+    top: 0.3rem;
+    
 
     .desc-time{
         font-size: 10px;

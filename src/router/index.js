@@ -69,6 +69,38 @@ export default new Router({
       component:() => import('@/views/newsList')
     },
     {
+      path:'/auditStatus/0/1',
+      name:'auditStatus01',
+      meta:{
+        title:'思想汇报'
+      },
+      component:() => import('@/views/auditStatus')
+    },
+    {
+      path:'/auditStatus/0/2',
+      name:'auditStatus02',
+      meta:{
+        title:'心得总结'
+      },
+      component:() => import('@/views/auditStatus')
+    },
+    {
+      path:'/LifeChoice',
+      name:'LifeChoice',
+      meta:{
+        title:'民主评议'
+      },
+      component:() => import('@/views/LifeChoice')
+    },
+    {
+      path:'/findorg',
+      name:'findorg',
+      meta:{
+        title:'流动党员找组织'
+      },
+      component:() => import('@/views/findorg')
+    },
+    {
       path:'/anytimestudy',
       name:'anytimestudy',
       meta:{
@@ -92,5 +124,77 @@ export default new Router({
       },
       component:() => import('@/views/newsList')
     },
+    {
+      path:'/anytimephoto',
+      name:'anytimephoto',
+      meta:{
+        title:'随时随地拍'
+      },
+      component:() => import('@/views/anytimephoto')
+    },
+    {
+      path:'/life',
+      name:'life',
+      meta:{
+        title:'掌上组织生活'
+      },
+      component:() => import('@/views/life')
+    },
+    {
+      path:'/interaction',
+      name:'interaction',
+      meta:{
+        title:'党员云互动'
+      },
+      component:() => import('@/views/interaction')
+    },
+    {
+      path:'/today',
+      name:'today',
+      meta:{
+        title:'党史上的今天'
+      },
+      component:() => import('@/views/today')
+    },
+    {
+      path:'/newsDetail/:id',
+      name:'newsDetail',
+      meta:{
+        title:''
+      },
+      component:() => import('@/views/newsDetail')
+    },
+    {
+      path:'/score',
+      name:'score',
+      meta:{
+        title:'个人量化积分'
+      },
+      component:() => import('@/views/score')
+    },
+    {
+      path:'/info',
+      name:'info',
+      meta:{
+        title:'个人信息'
+      },
+      component:() => import('@/views/info')
+    },
+    {
+      path:'/uppass',
+      name:'uppass',
+      meta:{
+        title:'修改密码'
+      },
+      component:() => import('@/views/uppass')
+    },
+    {
+      path:'/pay',
+      name:'pay',
+      meta:{
+        title:'缴纳党费'
+      },
+      component:() => import('@/views/pay')
+    }
   ]
 })

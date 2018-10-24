@@ -18,27 +18,21 @@
     width: 1.6rem;
     height: 1.6rem;
     position: absolute;
-    left: 0;
+    left: 0.1rem;
+    top: 0.24rem;
     img{
-        width: 1.6rem;
+    width: 1.6rem;
     height: 1.6rem;
     }
 }
 
-.laba{
-    display: flex;
-    text-align: center;
-    margin: 0 auto;
-    justify-content: space-between;
-
-}
 
 .desclist{
     font-size: 15px;
     color: #333;
     line-height: 22px;
     position: absolute;
-    left: 1.8rem;
+    left: 1.9rem;
     right: 0.24rem;
     top: 0.24rem;
 
@@ -49,7 +43,7 @@
     color: #666;
     position: absolute;
     bottom: 0.24rem;
-    left: 1.8rem;
+    left: 1.9rem;
 
 }
 

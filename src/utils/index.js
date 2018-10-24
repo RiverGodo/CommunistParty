@@ -1,4 +1,5 @@
 import axios from 'axios'
+import qs from 'qs'//将json字符串格式改为form-data格式
 
 const instance = axios.create({
     baseURL:'/api',
@@ -7,8 +8,8 @@ const instance = axios.create({
 
 const xhr = {
     get(url,data,config) {
-        return new Promise((resolve,reject) => {
-            instance.get(url, {params:data,...config}, ).then(res =>{
+        return new Promise((resolve,rejects) => {
+            instance.get(url, {params:data,...config}).then(res =>{
                 resolve(res.data)
             }).catch(err =>{
                 reject(err)
@@ -16,8 +17,10 @@ const xhr = {
         })
     },
     fetch(url,data,config,methods){
-        return new Promise((resolve,reject) => {
-            instance[methods](url, data, config).then(res =>{
+        return new Promise((resolve,rejects) => {
+            let queryData = qs.stringify(data)
+            console.log('处理后的数据',queryData)
+            instance[methods](url, queryData, config).then(res =>{
                 resolve(res.data)
             }).catch(err =>{
                 reject(err)
@@ -27,8 +30,9 @@ const xhr = {
     post(url,data,config) {
         return this.fetch(url,data,config,'post')
     },
-
-    
+    put(url,data,config){
+        return this.fetch(url,data,config,'put')
+    }
 }
 
-export default  xhr 
+export const  $axios = xhr

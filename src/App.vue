@@ -27,7 +27,7 @@ export default {
       }
     },
     isIndex(){
-       if(this.$route.name === 'index'){
+       if(this.$route.name === 'index'||this.$route.name === 'newsDetail'){
         return false;
       }
       else{
@@ -77,4 +77,5 @@ a{
 .border{
   border-bottom: 1px solid rgba(0, 0, 0, .5);
 }
+
 </style>

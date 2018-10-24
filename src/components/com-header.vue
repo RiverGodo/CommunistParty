@@ -16,7 +16,7 @@ export default {
             return this.$route.meta.title
         },
         isShow(){
-            if(this.$route.name === 'index'||this.$route.name === 'newsDetails'||this.$route.name === 'myparty')
+            if(this.$route.name === 'index'||this.$route.name === 'notice'||this.$route.name === 'myparty')
             {
             return false;
             }

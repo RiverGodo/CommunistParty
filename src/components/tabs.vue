@@ -56,7 +56,7 @@ export default {
             text-align: center;
             height: 100%;
              .bottom-detil{
-                padding-top: 10px;
+                padding-top: 0.1rem;
             }
         }
     .active{
