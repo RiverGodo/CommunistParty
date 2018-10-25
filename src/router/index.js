@@ -173,6 +173,14 @@ export default new Router({
       component:() => import('@/views/score')
     },
     {
+      path:'/scoredetail',
+      name:'scoredetail',
+      meta:{
+        title:'积分明细'
+      },
+      component:() => import('@/views/scoredetail')
+    },
+    {
       path:'/info',
       name:'info',
       meta:{

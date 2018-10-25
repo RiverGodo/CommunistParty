@@ -1,0 +1,53 @@
+.scoreitem{
+
+
+    .header{
+        width: 100%;
+        height: 2.8956rem;
+    }
+    .scoremt{
+        color: #666;
+    
+        .scoreimg{
+            width: 0.64rem;
+            height: 100%;
+        }
+    }
+    .middle-jifen{
+        background: rgb(221,221,221);
+        height: 0.32rem;
+        border: 1px solid #ddd;
+        color: #444;
+        z-index: 2;
+        display: block;
+        padding: 0.18rem;
+        font-size: 16px;
+        .jifen{
+        float: left;
+        height: 100%;
+        font-size: 14px;
+        align-items: center;
+        display: table-cell;
+        vertical-align: middle; 
+        }
+        img{
+            float: right;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center; 
+        }
+    }
+
+}
+
+.scorecell{
+    min-height: 0.68rem;
+    /deep/ .mint-cell-title{
+        font-size: 14px;
+        color: rgb(153, 153, 153);
+    }
+    /deep/ .mint-cell-value{
+        color: red;
+    }
+}
+

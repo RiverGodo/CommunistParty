@@ -1,5 +1,5 @@
 <template>
-    <div class="cell-photo" 
+    <div class="cell-photo pt110" 
         v-infinite-scroll="loadMore"
         infinite-scroll-disabled="isOffdown"
         infinite-scroll-distance="0"  
@@ -51,6 +51,6 @@ export default {
 }
 </script>
 
-<style lang = "scss">
+<style scoped lang = "scss">
     @import '../style/anytimephoto.scss';
 </style>

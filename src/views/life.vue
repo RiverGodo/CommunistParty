@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="pt1">
         <img src="../assets/liangxueyizuo.jpg" class="twostudy">
         <div class="main-menu2">
             <div class="row2">
@@ -62,6 +62,6 @@ export default {
 }
 </script>
 
-<style >
+<style scoped >
     @import "../style/life.scss";
 </style>

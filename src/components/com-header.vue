@@ -29,6 +29,13 @@ export default {
 </script>
 
 <style lang='scss'>
+.com-header{
+        align-items: center;
+        height: 1.12rem;
+        width:100%;
+        position:fixed;
+        top:0;
+        z-index:1;
     .mint-header{
         background: #c50206;
         height: 50px;
@@ -38,4 +45,6 @@ export default {
             font-weight: 400;
         }
     }
+}
+    
 </style>

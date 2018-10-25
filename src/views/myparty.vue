@@ -1,5 +1,5 @@
 <template>
-    <div >
+    <div class="pt1">
         <div class="partytop" v-if="!$store.state.userInfo">
             <div class="indeximg">
                 <img src="../assets/bt_bg.png" class="header">

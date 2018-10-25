@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="pt1">
         党史上的今天
     </div>
 </template>
@@ -10,6 +10,6 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>

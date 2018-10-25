@@ -1,0 +1,30 @@
+.jifenmingxi{
+    .scdecell{
+        min-height: 1.78rem;
+        /deep/ .mint-cell-value{
+            color: red;
+        }
+        /deep/ .mint-cell-wrapper{
+            min-height:1.16rem;
+        }
+        .detailspan{
+            position: absolute;
+            left: 0.2rem;
+            top: 1rem;
+            color: #444;
+            font-size: 14px;
+        }
+    }
+    
+}
+
+.nodesc{
+    display: flex;
+    font-size: 14px;
+    text-align: center;
+    margin: 0 auto;
+    justify-content: space-around;
+    color: #666;
+
+}
+

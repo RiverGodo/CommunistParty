@@ -27,7 +27,7 @@ export default {
       }
     },
     isIndex(){
-       if(this.$route.name === 'index'||this.$route.name === 'newsDetail'){
+       if(this.$route.name === 'index'||this.$route.name === 'newsDetail'||this.$route.name == 'info'){
         return false;
       }
       else{
@@ -61,6 +61,9 @@ a{
   content: '';
   display: block;
   clear: both;
+}
+.pt1{
+  padding-top: 0.8rem;
 }
 .pt110{
   padding-top: 1.1rem;

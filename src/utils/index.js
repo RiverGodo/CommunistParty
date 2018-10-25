@@ -1,10 +1,30 @@
 import axios from 'axios'
 import qs from 'qs'//将json字符串格式改为form-data格式
+import store from '../store'
 
 const instance = axios.create({
     baseURL:'/api',
     timeout:15000,
-})
+    headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        // 'token' : store.state.token
+    }
+});
+
+// 添加请求拦截器
+instance.interceptors.request.use( config => {
+    // 在发送请求之前做些什么
+    if(store.state.userInfo){
+        config.headers.token = store.state.token
+        // config.headers = {...config.headers,...{
+        //     'token' : store.state.token
+        // }}
+
+    }
+    return config;
+}, error => {
+    return Promise.reject(error); // 对请求错误做些什么
+});
 
 const xhr = {
     get(url,data,config) {
@@ -12,7 +32,7 @@ const xhr = {
             instance.get(url, {params:data,...config}).then(res =>{
                 resolve(res.data)
             }).catch(err =>{
-                reject(err)
+                rejects(err)
             })
         })
     },
@@ -23,7 +43,7 @@ const xhr = {
             instance[methods](url, queryData, config).then(res =>{
                 resolve(res.data)
             }).catch(err =>{
-                reject(err)
+                rejects(err)
             })
         })
     },

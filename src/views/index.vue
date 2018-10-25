@@ -75,7 +75,7 @@
             <img src="../assets/banner02.png" alt="">
         </div>  
 
-        <div class="footer-menu">
+        <div class="footer-menu"> 
             <div class="menu-left">
             </div>
             <div class="menu-right">

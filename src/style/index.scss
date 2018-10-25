@@ -105,6 +105,8 @@
    }
    .menu-right{
        flex: 2;
+       height: 100%;
+       padding-left: 32%;
        .row{
            display: flex;
            height: 50%;

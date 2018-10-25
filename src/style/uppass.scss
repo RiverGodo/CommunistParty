@@ -1,0 +1,27 @@
+.uppass{
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    width: auto;
+    height: auto;
+    .login-from{
+        width: 6rem;
+        margin: 1rem auto;
+        color: #666;
+        font-size: 16px;
+        .button-assertive{
+            background: #ef473a;
+            color: #fff
+        }
+    }
+    input{
+        width: 100%;
+        margin-bottom: 0.5rem;
+        border-radius: 5px;
+        height: 0.8rem;
+        color: #666;
+    }
+}
