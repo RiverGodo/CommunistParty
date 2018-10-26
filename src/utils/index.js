@@ -56,3 +56,15 @@ const xhr = {
 }
 
 export const  $axios = xhr
+
+export function handletime(str){
+    let time = new Date(str)
+    let year = time.getFullYear();
+    let month = time.getMonth() +1;
+    let day = time.getDate()
+    month = month < 10 ? '0' + month : month
+    day = day <10 ? '0' + day : day
+    // let newtime = time.toLocaleDateString() +" "+ time.toTimeString().substr(0, 8)
+    let newtime = `${year}-${month}-${day}`
+    return newtime
+}

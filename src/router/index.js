@@ -189,6 +189,22 @@ export default new Router({
       component:() => import('@/views/info')
     },
     {
+      path:'/updateInfo',
+      name:'updateInfo',
+      meta:{
+        title:'修改个人信息'
+      },
+      component:() => import('@/views/updateInfo')
+    },
+    {
+      path:'/interDetail',
+      name:'interDetail',
+      meta:{
+        title:'党员云互动'
+      },
+      component:() => import('@/views/interDetail')
+    },
+    {
       path:'/uppass',
       name:'uppass',
       meta:{

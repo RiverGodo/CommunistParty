@@ -9,6 +9,7 @@
             <span class="detailspan">{{item.timeFormat}}</span>
         </mt-cell>
         <span class="nodesc">没有数据了</span>
+        
     </div>
 </template>
 

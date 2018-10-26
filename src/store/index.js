@@ -7,7 +7,8 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
     state:{
         userInfo:{},
-        token:''
+        token:'',
+        interact:''
     },
     mutations:{
         'CHANGE_userInfo'(state,payload){
@@ -15,13 +16,16 @@ const store = new Vuex.Store({
         },
         'CHANGETOKEN' (state,payload) {
             state.token = payload
-          },
+        },
+        'CHANGEINTERACT' (state,payload) {
+            state.interact = payload
+        }
     },
     actions:{
 
     },
     plugins: [
-        createPersistedState({
+        createPersistedState({//持久化
           storage: {
             getItem: key => sessionStorage.getItem(key),
             // Please see https://github.com/js-cookie/js-cookie#json, on how to handle JSON.
